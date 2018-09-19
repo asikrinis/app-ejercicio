@@ -1,0 +1,68 @@
+<div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset 2">
+        <h2>Editar curso</h2>
+        <a class="btn btn-primary float-md-right" routerLink="/cursos">Regresar al listado</a>
+        <br>
+        <form [formGroup]="cursoForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label for="curso">Curso</label>
+                <i class="fa fa-check-circle check" *ngIf="cursoForm.controls.curso.valid"></i>
+                <i class="fa fa-exclamation-circle uncheck" *ngIf="cursoForm.controls.curso.invalid && cursoForm.controls.curso.touched"></i>
+                <input type="text" class="form-control" id="curso" formControlName="curso" [(ngModel)]="curso.curso">
+                <p class="alert alert-danger" *ngIf="cursoForm.controls.curso.invalid && cursoForm.controls.curso.touched">
+                    El campo Curso es obligatorio.
+                </p>
+            </div>
+            <div class="form-group">
+                <label for="materia">Materia</label>
+                <i class="fa fa-check-circle check" *ngIf="cursoForm.controls.materia.valid"></i>
+                <i class="fa fa-exclamation-circle uncheck" *ngIf="cursoForm.controls.materia.invalid && cursoForm.controls.materia.touched"></i>
+                <input type="text" class="form-control" id="materia" formControlName="materia" [(ngModel)]="curso.materia">
+                <p class="alert alert-danger" *ngIf="cursoForm.controls.materia.invalid && cursoForm.controls.materia.touched">
+                    El campo Materia es obligatorio.
+                </p>
+            </div>
+            <div class="form-group">
+                <label for="profesor">Profesor</label>
+                <i class="fa fa-check-circle check" *ngIf="cursoForm.controls.profesor.valid"></i>
+                <i class="fa fa-exclamation-circle uncheck" *ngIf="cursoForm.controls.profesor.invalid && cursoForm.controls.profesor.touched"></i>
+                <input type="text" class="form-control" id="profesor" formControlName="profesor" [(ngModel)]="curso.profesor">
+                <p class="alert alert-danger" *ngIf="cursoForm.controls.profesor.invalid && cursoForm.controls.profesor.touched">
+                    El campo Profesor es obligatorio.
+                </p>
+            </div>
+            <div class="form-group">
+                <label for="turno">Turno</label>
+                <i class="fa fa-check-circle check" *ngIf="cursoForm.controls.turno.valid"></i>
+                <i class="fa fa-exclamation-circle uncheck" *ngIf="cursoForm.controls.turno.invalid && cursoForm.controls.turno.touched"></i>
+                <input type="text" class="form-control" id="turno" formControlName="turno" [(ngModel)]="curso.turno">
+                <p class="alert alert-danger" *ngIf="cursoForm.controls.turno.invalid && cursoForm.controls.turno.touched">
+                    El campo Turno es obligatorio.
+                </p>
+            </div>
+            <div class="form-group">
+                <label for="nivel">Nivel</label>
+                <i class="fa fa-check-circle check" *ngIf="cursoForm.controls.nivel.valid"></i>
+                <i class="fa fa-exclamation-circle uncheck" *ngIf="cursoForm.controls.nivel.invalid && cursoForm.controls.nivel.touched"></i>
+                <input type="number" class="form-control" id="nivel" formControlName="nivel" [(ngModel)]="curso.nivel">
+                <p class="alert alert-danger" *ngIf="cursoForm.controls.nivel.invalid && cursoForm.controls.nivel.touched">
+                    El campo Nivel es obligatorio.
+                </p>
+            </div>
+            <div class="form-group">
+                <label for="fecha">Fecha</label>
+                <i class="fa fa-check-circle check" *ngIf="cursoForm.controls.fecha.valid"></i>
+                <i class="fa fa-exclamation-circle uncheck" *ngIf="cursoForm.controls.fecha.invalid && cursoForm.controls.fecha.touched"></i>
+                <input type="date" class="form-control" id="fecha" formControlName="fecha" [(ngModel)]="curso.fecha">
+                <p class="alert alert-danger" *ngIf="cursoForm.controls.nivel.invalid && cursoForm.controls.nivel.touched">
+                    El campo Fecha es obligatorio.
+                </p>
+            </div>
+            <button class="btn btn-primary" type="submit" [disabled]="!cursoForm.valid">Añadir Curso</button>
+            <a class="btn btn-danger" id="botoncancelar" routerLink="/cursos">Cancelar</a>
+            <p class="alert alert-danger" *ngIf="!cursoForm.valid">
+                Por favor complete todos los campos.
+            </p>
+        </form>
+    </div>
+</div>

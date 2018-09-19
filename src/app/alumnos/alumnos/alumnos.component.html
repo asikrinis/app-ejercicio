@@ -1,0 +1,27 @@
+<h1>Lista de los Alumnos</h1>
+<a class="btn btn-primary float-md-right" routerLink="/agregaralumnos">Añadir
+  nuevo alumno</a>
+<br>
+<br>
+<table class="table table-striped table-dark">
+    <thead>
+        <tr class="filters">
+            <th scope="col">Nombre</th>
+            <th scope="col">Apellido Materno</th>
+            <th scope="col">Número de cuenta</th>
+            <th scope="col">Carrera</th>
+            <th scope="col">Teléfono</th>
+            <th scope="col">Correo Electrónico</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let alumno of alumnos">
+            <th scope="row">{{ alumno.nombre }}</th>
+            <td>{{ alumno.apellido }}</td>
+            <td>{{ alumno.numerodecuenta }}</td>
+            <td>{{ alumno.carrera }}</td>
+            <td>{{ alumno.telefono }}</td>
+            <td>{{ alumno.email }}</td>
+        </tr>
+    </tbody>
+</table>
